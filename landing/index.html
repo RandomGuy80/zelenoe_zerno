@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зелёное зерно — кофе, обжаренный на этой неделе</title>
+  <meta name="description" content="Небольшая обжарка в Москве. Жарим партиями по 5 кг и отправляем в день обжарки.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav nav-left" aria-label="Основное меню">
+      <a href="#coffee">Кофе</a>
+      <a href="#how">Как мы работаем</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="Зелёное зерно, на главную">
+      <svg class="logo-mark" viewBox="0 0 300 400" aria-hidden="true">
+        <path d="M148 6C232 4 294 98 292 208 288 318 232 396 150 394 66 392 8 312 10 204 12 98 66 8 148 6Z" fill="var(--pink)"/>
+        <path d="M148 40C112 110 188 150 150 210 114 270 184 322 150 368" fill="none" stroke="var(--green-deep)" stroke-width="26" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text"><strong>Зелёное зерно</strong><small>обжарка кофе · Москва</small></span>
+    </a>
+    <div class="header-cta"><a class="btn btn-small" href="#order">Заказать</a></div>
+  </header>
+
+  <main id="top">
+    <div class="hero-band">
+    <span class="deco-glow" aria-hidden="true"></span>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Кофе, обжаренный на этой неделе</h1>
+        <p class="lead">Небольшая обжарка в Москве. Привозим зерно напрямую с ферм, жарим партиями по 5 кг и отправляем в день обжарки.</p>
+
+        <div class="roast-control">
+          <label for="roast">Выберите обжарку</label>
+          <input id="roast" type="range" min="0" max="100" value="45" aria-describedby="roast-info">
+          <div class="roast-scale" aria-hidden="true"><span>Светлая</span><span>Тёмная</span></div>
+          <div id="roast-info" class="roast-info" aria-live="polite">
+            <strong id="roast-name"></strong>
+            <span id="roast-desc"></span>
+          </div>
+        </div>
+
+        <a class="btn" href="#coffee">Подобрать зерно</a>
+      </div>
+
+      <div class="hero-bean" aria-hidden="true">
+        <div class="bean" id="bean">
+          <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="bean-body" cx="35%" cy="28%" r="85%">
+                <stop offset="0" style="stop-color:color-mix(in srgb, var(--bean-color) 62%, white)"/>
+                <stop offset=".5" style="stop-color:var(--bean-color)"/>
+                <stop offset="1" style="stop-color:color-mix(in srgb, var(--bean-color) 45%, black)"/>
+              </radialGradient>
+              <clipPath id="bean-clip"><path id="bean-shape" d="M148 6C232 4 294 98 292 208 288 318 232 396 150 394 66 392 8 312 10 204 12 98 66 8 148 6Z"/></clipPath>
+              <filter id="bean-grain" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="4"/>
+                <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.4 -.45"/>
+              </filter>
+              <filter id="bean-blur"><feGaussianBlur stdDeviation="9"/></filter>
+            </defs>
+            <use href="#bean-shape" fill="url(#bean-body)"/>
+            <g clip-path="url(#bean-clip)">
+              <rect width="300" height="400" filter="url(#bean-grain)" opacity=".35"/>
+              <path d="M146 -10C112 80 188 130 150 205 112 280 182 330 148 410" fill="none" stroke="#000" stroke-width="30" opacity=".18" filter="url(#bean-blur)"/>
+              <path d="M146 -10C112 80 188 130 150 205 112 280 182 330 148 410" fill="none" stroke="color-mix(in srgb, var(--bean-color) 20%, black)" stroke-width="13" stroke-linecap="round" opacity=".92"/>
+              <path d="M153 -10C119 80 195 130 157 205 119 280 189 330 155 410" fill="none" stroke="#fff" stroke-width="2.5" opacity=".18"/>
+              <ellipse class="shine" cx="92" cy="92" rx="38" ry="66" fill="#fff" transform="rotate(24 92 92)" filter="url(#bean-blur)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+    <section class="band band-coffee" id="coffee">
+      <div class="container">
+        <h2>Три зерна этой недели</h2>
+        <p class="section-lead">Каждую неделю мы выбираем три партии: одну светлую, одну среднюю и одну тёмную. Всё, что обжарили сегодня, к концу недели заканчивается, поэтому кофе у вас всегда свежий.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <span class="mini-bean" style="--bean-color:#c9935a"></span>
+              <div><h3>Эфиопия Гуджи</h3><span class="origin">Ферма Шакисо, 2100 м</span></div>
+            </div>
+            <p>Яркий и чистый кофе с цветочным ароматом. Лучше всего раскрывается в воронке и аэропрессе.</p>
+            <ul class="chips"><li>жасмин</li><li>персик</li><li>чёрный чай</li></ul>
+            <div class="roast-meter" aria-label="Обжарка: 1 из 5"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp;светлая</div>
+            <div class="card-foot"><span class="price">1 150 ₽ <small>за 250 г</small></span><button class="btn btn-small" type="button" data-coffee="Эфиопия Гуджи">В заказ</button></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <span class="mini-bean" style="--bean-color:#7a4a28"></span>
+              <div><h3>Бразилия Сан-Паулу</h3><span class="origin">Ферма Фазенда, 1100 м</span></div>
+            </div>
+            <p>Мягкий сладкий кофе без резкой кислоты. Хорош и в чашке, и в турке, и в кофемашине.</p>
+            <ul class="chips"><li>карамель</li><li>лесной орех</li><li>молочный шоколад</li></ul>
+            <div class="roast-meter" aria-label="Обжарка: 3 из 5"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span>&nbsp;средняя</div>
+            <div class="card-foot"><span class="price">890 ₽ <small>за 250 г</small></span><button class="btn btn-small" type="button" data-coffee="Бразилия Сан-Паулу">В заказ</button></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <span class="mini-bean" style="--bean-color:#2a150c"></span>
+              <div><h3>Колумбия Уила</h3><span class="origin">Кооператив Эль-Параисо, 1700 м</span></div>
+            </div>
+            <p>Плотный насыщенный кофе с долгим послевкусием. Создан для эспрессо и напитков с молоком.</p>
+            <ul class="chips"><li>горький шоколад</li><li>какао</li><li>специи</li></ul>
+            <div class="roast-meter" aria-label="Обжарка: 5 из 5"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>&nbsp;тёмная</div>
+            <div class="card-foot"><span class="price">950 ₽ <small>за 250 г</small></span><button class="btn btn-small" type="button" data-coffee="Колумбия Уила">В заказ</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-how" id="how">
+      <div class="container how-grid">
+        <div>
+          <h2>Путь от обжарки до чашки</h2>
+          <p class="section-lead">Мы не держим склад. Кофе обжаривается под заказы, поэтому между печью и вашей кухней проходит всего несколько дней.</p>
+          <ol class="steps">
+            <li><div><strong>Вы выбираете зерно и помол.</strong><span>Оставляете заявку на сайте, мы перезваниваем в течение часа и уточняем детали: как вы завариваете кофе и сколько пьёте.</span></div></li>
+            <li><div><strong>Мы обжариваем партию.</strong><span>Жарим в день отправки на небольшой печи. После обжарки кофе отдыхает сутки, чтобы вкус раскрылся.</span></div></li>
+            <li><div><strong>Курьер привозит заказ.</strong><span>По Москве за 1–2 дня, по России почтой за 3–6. Дату обжарки вы найдёте на упаковке.</span></div></li>
+          </ol>
+        </div>
+        <aside class="label-card" aria-label="Пример этикетки">
+          <h3>Так выглядит наша этикетка</h3>
+          <dl>
+            <div><dt>Кофе</dt><dd>Эфиопия Гуджи</dd></div>
+            <div><dt>Обжарено</dt><dd>30 сентября</dd></div>
+            <div><dt>Упаковано</dt><dd>1 октября</dd></div>
+            <div><dt>Партия</dt><dd>№ 41, 5 кг</dd></div>
+            <div><dt>Лучший вкус</dt><dd>через 5–30 дней</dd></div>
+          </dl>
+          <p>Дата обжарки есть на каждой упаковке, поэтому вы всегда знаете, насколько кофе свежий.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="band band-order" id="order">
+      <div class="container order-grid">
+        <div>
+          <h2>Оформить заказ</h2>
+          <form class="form" id="order-form" novalidate>
+            <div class="field">
+              <label for="name">Имя</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+              <p class="error" data-error-for="name"></p>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
+              <p class="error" data-error-for="phone"></p>
+            </div>
+            <div class="field">
+              <label for="coffee-select">Какой кофе</label>
+              <select id="coffee-select" name="coffee"><option>Эфиопия Гуджи</option><option>Бразилия Сан-Паулу</option><option>Колумбия Уила</option></select>
+            </div>
+            <div class="field">
+              <label for="weight">Упаковка</label>
+              <select id="weight" name="weight"><option>250 г</option><option>500 г</option><option>1 кг</option></select>
+            </div>
+            <div class="field field-wide">
+              <label for="grind">Помол</label>
+              <select id="grind" name="grind"><option>Зерном, без помола</option><option>Для воронки</option><option>Для эспрессо</option><option>Для турки</option></select>
+            </div>
+            <div class="field field-wide">
+              <label for="comment">Комментарий</label>
+              <textarea id="comment" name="comment" rows="3" placeholder="Адрес доставки или пожелания"></textarea>
+            </div>
+            <button class="btn" type="submit">Отправить заказ</button>
+            <p class="form-success" id="form-success" role="status" hidden></p>
+          </form>
+        </div>
+        <aside class="info">
+          <h3>Доставка и оплата</h3>
+          <ul>
+            <li><strong>Москва</strong>Курьером за 1–2 дня. Бесплатно от 2 000 ₽.</li>
+            <li><strong>Россия</strong>Почтой за 3–6 дней, стоимость посчитаем при звонке.</li>
+            <li><strong>Оплата</strong>Переводом или при получении.</li>
+            <li><strong>Связь</strong>+7 (900) 000-00-00, ежедневно с 9:00 до 20:00.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Зелёное зерно · Москва, ул. Тестовая, 1 · hello@zelenoe-zerno.example</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
